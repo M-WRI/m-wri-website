@@ -7,3 +7,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  @apply overscroll-none;
+}
+
+h1 {
+  @apply text-5xl font-bold;
+}
+
+h2 {
+  @apply text-4xl font-bold;
+}
+
+h3 {
+  @apply text-3xl font-bold;
+}
+
+h4 {
+  @apply text-2xl font-bold;
+}
+
+h5 {
+  @apply text-xl font-bold;
+}

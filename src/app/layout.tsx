@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
+import { Footer, Navigation } from "@/components";
 import "./global.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,19 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} grid grid-cols-[1fr_250px]`}>
         <section className="bg-blue-100 flex flex-col border-r-2 border-black relative">
-          <header className="grid gap-2 sticky top-0 left-0 right-0 py-2 bg-slate-100">
-            <nav className="text-xl font-medium">
-              <ul className="flex gap-4 justify-around">
-                <li>navigation 1</li>
-                <li>navigation 2</li>
-                <li>navigation 3</li>
-              </ul>
-            </nav>
-          </header>
-          <div className="bg-lime-100 h-screen py-11">{children}</div>
-          <footer className="border-black border-t-2">
-            <p>© {new Date().getFullYear()} M-Wri</p>
-          </footer>
+          <Navigation />
+          <div className="bg-lime-100 h-screen">{children}</div>
+          <Footer />
         </section>
         <section className="bg-green-100">
           <nav className="sticky top-0">
