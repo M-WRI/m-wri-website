@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { Footer, Navigation } from "@/components";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 import "./global.css";
 
 const inter = Raleway({ subsets: ["latin"] });
@@ -20,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} grid grid-cols-[1fr_250px]`}>
         <section className="bg-blue-100 flex flex-col border-r-2 border-black relative">
           <Navigation />
-          <div className="bg-lime-100 h-screen">{children}</div>
+          {children}
           <Footer />
         </section>
         <section className="bg-green-100">
