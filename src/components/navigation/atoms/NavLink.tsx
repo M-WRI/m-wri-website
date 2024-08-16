@@ -1,10 +1,12 @@
+"use client";
+
 export const NavLink = ({
   text,
   link,
   color = "black",
 }: {
-  text: string;
-  link: string;
+  text: string | null;
+  link: string | null;
   color?: "black" | "white";
 }) => {
   const textColor = color === "black" ? "text-black" : "text-white";

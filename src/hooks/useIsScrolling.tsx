@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 export const useIsScrolling = () => {
   const [isScrolling, setIsScrolling] = useState(false);

@@ -1,11 +1,8 @@
 "use client";
-
 import { useIsScrolling } from "@/hooks";
-import { NavLink } from "./atoms";
 
-export const Navigation = () => {
+export const NavigationClientContainer = ({ children }: { children: any }) => {
   const { isScrolling } = useIsScrolling();
-  const navigationLinks = ["Navigation 1", "Navigation 2", "Navigation 3"];
 
   return (
     <header
@@ -14,11 +11,7 @@ export const Navigation = () => {
       }`}
     >
       <nav className="font-medium">
-        <ul className="flex gap-4 justify-around">
-          {navigationLinks.map((link) => (
-            <NavLink key={link} text={link} link={`#${link}`} />
-          ))}
-        </ul>
+        <ul className="flex gap-4 justify-around">{children}</ul>
       </nav>
     </header>
   );
