@@ -1,15 +1,29 @@
-import { createClient } from "@/prismicio";
 import { NavLink } from "./atoms/NavLink";
 import { NavigationClientContainer } from "./atoms";
 
 export const Header = async () => {
-  const client = createClient();
-  const settings = await client.getSingle("settings");
+  const navigation = [
+    {
+      id: "1",
+      label: "Home",
+      link: "home",
+    },
+    {
+      id: "2",
+      label: "About",
+      link: "about",
+    },
+    {
+      id: "3",
+      label: "Projects",
+      link: "projects",
+    },
+  ];
 
   return (
     <NavigationClientContainer>
-      {settings.data.navigation.map((item, i) => (
-        <NavLink key={i} text={item.label} link={`#${item.link}`} />
+      {navigation.map((item, i) => (
+        <NavLink key={i} text={item.label} link={`#`} />
       ))}
     </NavigationClientContainer>
   );

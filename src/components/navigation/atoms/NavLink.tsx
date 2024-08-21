@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export const NavLink = ({
   text,
   link,
@@ -11,10 +13,10 @@ export const NavLink = ({
 }) => {
   const textColor = color === "black" ? "text-black" : "text-white";
   return (
-    <li className={`${textColor} text-xl cursor-pointer`}>
-      <a href={`${link}`} target="_blank" rel="noreferrer">
-        {text}
-      </a>
+    <li
+      className={`${textColor} text-xl font-semibold cursor-pointer hover:bg-black hover:text-white `}
+    >
+      <Link href={`/${link}`}>{text}</Link>
     </li>
   );
 };
